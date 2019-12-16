@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "247276325350",
+    "firebase_url": "https://pubnubpushtest-734a5.firebaseio.com",
+    "project_id": "pubnubpushtest-734a5",
+    "storage_bucket": "pubnubpushtest-734a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247276325350:android:c0b6ef81d4d656b0132e27",
+        "android_client_info": {
+          "package_name": "com.pubnubtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247276325350-fil0ino7bubjrgr0on4vi86tjf9kbdhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlnTW_yJ2-WfA5y_ZU0ayUz6myeslju0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247276325350-fil0ino7bubjrgr0on4vi86tjf9kbdhq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
