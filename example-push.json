@@ -1,5 +1,5 @@
 { 
-    "pn_gcm": { "data": { "message": "hello", "route":"/route", "id": "123" } },
-    "pn_apns": { "aps": { "alert": "hello", "route":"/route", "id": "123" } },
+    "pn_gcm": { "data": { "message": "hello", "data": { "route":"/route", "id": "123" }} },
+    "pn_apns": { "aps": { "alert": "hello" }, "route":"/route", "id": "123" },
     "pn_debug": true  
 }

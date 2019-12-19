@@ -39,7 +39,7 @@ export default class Push extends React.Component {
             },
             onNotification: (notification) => {
                 Alert.alert('Push received', JSON.stringify(notification), [{text: 'OK', onPress: () => console.log('OK Pressed')}]);
-                const { route, id } = notification;
+                const { route, id } = notification.data;
                 this.setState({ recieved: { route, id }});
                 // Do something with the notification.
                 // Required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
