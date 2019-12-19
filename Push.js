@@ -18,6 +18,7 @@ export default class Push extends React.Component {
             onRegister: (token) => {
                 console.log( 'TOKEN:', token );
                 Clipboard.setString(token.token)
+                Alert.alert('Registered', JSON.stringify(token), [{text: 'OK', onPress: () => console.log('OK Pressed')}]);
                 if (token.os == "ios")
                 {
                     this.pubnub.push.addChannels(

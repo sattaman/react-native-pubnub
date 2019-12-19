@@ -62,6 +62,7 @@
 		8CBD794E91C4C1CC83F0A5C6 /* Pods-PubNubTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubTest.debug.xcconfig"; path = "Target Support Files/Pods-PubNubTest/Pods-PubNubTest.debug.xcconfig"; sourceTree = "<group>"; };
 		A0750C02A21535F1B43D0DCE /* libPods-PubNubTest-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PubNubTest-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B992F8E88B23570BAC095D60 /* Pods-PubNubTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubTestTests.release.xcconfig"; path = "Target Support Files/Pods-PubNubTestTests/Pods-PubNubTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		E21BEF3423ABCCAD00D17FBB /* PubNubTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = PubNubTest.entitlements; path = PubNubTest/PubNubTest.entitlements; sourceTree = "<group>"; };
 		E221922D0C8E784E98C50481 /* libPods-PubNubTest-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PubNubTest-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53FED9031735F277D9D7A09 /* Pods-PubNubTest-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubTest-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PubNubTest-tvOS/Pods-PubNubTest-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -125,6 +126,7 @@
 		13B07FAE1A68108700A75B9A /* PubNubTest */ = {
 			isa = PBXGroup;
 			children = (
+				E21BEF3423ABCCAD00D17FBB /* PubNubTest.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -289,11 +291,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = TXLSTX7UT8;
+						DevelopmentTeam = 92M87LS3AD;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = TXLSTX7UT8;
+						DevelopmentTeam = 92M87LS3AD;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -587,7 +589,7 @@
 			baseConfigurationReference = 3A60CA84AECEBFAECD6A28ED /* Pods-PubNubTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = TXLSTX7UT8;
+				DEVELOPMENT_TEAM = 92M87LS3AD;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -612,7 +614,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = TXLSTX7UT8;
+				DEVELOPMENT_TEAM = 92M87LS3AD;
 				INFOPLIST_FILE = PubNubTestTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -632,9 +634,10 @@
 			baseConfigurationReference = 8CBD794E91C4C1CC83F0A5C6 /* Pods-PubNubTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PubNubTest/PubNubTest.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = TXLSTX7UT8;
+				DEVELOPMENT_TEAM = 92M87LS3AD;
 				INFOPLIST_FILE = PubNubTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -642,7 +645,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cobracode.PubNubTest;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cobracode.icis-push-test";
 				PRODUCT_NAME = PubNubTest;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -653,8 +656,9 @@
 			baseConfigurationReference = 65B997E656F42823DF8D4032 /* Pods-PubNubTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PubNubTest/PubNubTest.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TXLSTX7UT8;
+				DEVELOPMENT_TEAM = 92M87LS3AD;
 				INFOPLIST_FILE = PubNubTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -662,7 +666,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cobracode.PubNubTest;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cobracode.icis-push-test";
 				PRODUCT_NAME = PubNubTest;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
