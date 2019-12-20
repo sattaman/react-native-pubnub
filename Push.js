@@ -1,5 +1,6 @@
 import React from 'react';
-import { Alert, Clipboard, View, Text, Button } from 'react-native'
+import { Alert, Clipboard, View, Text, Button, Platform } from 'react-native';
+import PushNotificationIOS from "@react-native-community/push-notification-ios";
 import PubNubReact from 'pubnub-react';
 import PushNotification from 'react-native-push-notification';
 import { publishKey, subscribeKey, senderID } from './pubnubKeys.json'
@@ -8,10 +9,15 @@ export default class Push extends React.Component {
     constructor(props) {
         console.log('Push constructor')
         super(props);
+
+        this.userId = `myuser-${Platform.OS}`;
+        this.channelId = `myuser-${Platform.OS}-channel`;
+
         this.pubnub = new PubNubReact({
             publishKey,
             subscribeKey,
-            logVerbosity: true
+            logVerbosity: true,
+            uuid: this.userId
         });
         this.pubnub.init(this);
         PushNotification.configure({
@@ -23,7 +29,7 @@ export default class Push extends React.Component {
                 {
                     this.pubnub.push.addChannels(
                     {
-                        channels: ['notifications'],
+                        channels: [this.channelId],
                         device: token.token,
                         pushGateway: 'apns'
                     });
@@ -31,30 +37,31 @@ export default class Push extends React.Component {
                 {
                     this.pubnub.push.addChannels(
                     {
-                        channels: ['notifications'],
+                        channels: [this.channelId],
                         device: token.token,
-                        pushGateway: 'gcm' // apns, gcm, mpns
+                        pushGateway: 'gcm'
                     });
                 } 
             },
             onNotification: (notification) => {
                 Alert.alert('Push received', JSON.stringify(notification), [{text: 'OK', onPress: () => console.log('OK Pressed')}]);
-                const { route, id } = notification.data;
-                this.setState({ recieved: { route, id }});
-                // Do something with the notification.
-                // Required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
-                // notification.finish(PushNotificationIOS.FetchResult.NoData);
+                this.setState({ recievedData: notification.data });
+                if (Platform.OS === 'ios') {
+                    notification.finish(PushNotificationIOS.FetchResult.NoData);
+                }
             },
             senderID
         });
     }
 
     render() {
-        const { recieved } = this.state; 
+        const { recievedData } = this.state; 
 
         return (
             <View>
-                {recieved !== undefined && <Text>Route: {recieved.route} {recieved.id}</Text>}
+                <Text>User ID: {this.userId}</Text>
+                <Text>Channel ID: {this.channelId}</Text>
+                {recievedData !== undefined && <Text>Route: {recievedData.route} {recievedData.id}</Text>}
                 <Button
                     title="Reset badge count"
                     onPress={() => { 
