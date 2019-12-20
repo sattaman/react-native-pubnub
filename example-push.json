@@ -1,5 +1,25 @@
 { 
-    "pn_gcm": { "data": { "message": "hello", "data": { "route":"/route", "id": "123" }} },
-    "pn_apns": { "aps": { "alert": "hello" }, "route":"/route", "id": "123" },
+    "pn_gcm": { 
+        "data": { 
+            "message": "hello", 
+            "data": { 
+                "route":"/route", 
+                "id": "123" 
+            },
+            "notification": {
+                "badge": 1,
+                "largeIcon": "res/drawable/christmastree.png"
+            } 
+        }
+    },
+    "pn_apns": {
+        "aps": {
+            "alert": "hello",
+            "badge":1,
+            "sound":"default"
+        }, 
+        "route":"/route", 
+        "id": "123" 
+    },
     "pn_debug": true  
 }

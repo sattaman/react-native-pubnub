@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Clipboard, View, Text } from 'react-native'
+import { Alert, Clipboard, View, Text, Button } from 'react-native'
 import PubNubReact from 'pubnub-react';
 import PushNotification from 'react-native-push-notification';
 import { publishKey, subscribeKey, senderID } from './pubnubKeys.json'
@@ -50,8 +50,19 @@ export default class Push extends React.Component {
     }
 
     render() {
-        if (this.state.recieved === undefined) return null;
-        const { id, route } = this.state.recieved;
-        return <View><Text>Route: {route} {id}</Text></View>
+        const { recieved } = this.state; 
+
+        return (
+            <View>
+                {recieved !== undefined && <Text>Route: {recieved.route} {recieved.id}</Text>}
+                <Button
+                    title="Reset badge count"
+                    onPress={() => { 
+                        PushNotification.setApplicationIconBadgeNumber(0);
+                        Alert.alert('Badge count reset');
+                    }}
+                />
+            </View>
+        );
     }
 }
