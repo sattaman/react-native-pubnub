@@ -1,25 +1,22 @@
-{ 
-    "pn_gcm": { 
-        "data": { 
-            "title": "U ETS Market Vibe by EU Carbon Team / 03 Jan 2020 / 07:00 CET",
-            "message": "Next week, the first auctions in 2020 will be held. As 6 January is a public holiday in Germany and other member states, the first auction, worth 3.1m EUAs on behalf of the EU, will be held on 7 January.", 
-            "data": { 
-                "route":"/route", 
-                "id": "123" 
-            }
-        }
+{
+  "pn_gcm": {
+    "data": {
+      "title": "U ETS Market Vibe by EU Carbon Team / 03 Jan 2020 / 07:00 CET",
+      "message": "Next week, the first auctions in 2020 will be held. As 6 January is a public holiday in Germany and other member states, the first auction, worth 3.1m EUAs on behalf of the EU, will be held on 7 January.",
+      "data": { "route": "/route", "id": "123" },
+      "badge": 1
+    }
+  },
+  "pn_apns": {
+    "aps": {
+      "alert": {
+        "title": "U ETS Market Vibe by EU Carbon Team",
+        "subtitle": "03 Jan 2020 / 07:00 CET",
+        "body": "Next week, the first auctions in 2020 will be held. As 6 January is a public holiday in Germany and other member states, the first auction, worth 3.1m EUAs on behalf of the EU, will be held on 7 January."
+      },
+      "badge": 2
     },
-    "pn_apns": {
-        "aps": {
-            "alert": {
-                "title": "U ETS Market Vibe by EU Carbon Team / 03 Jan 2020 / 07:00 CET",
-                "message": "Next week, the first auctions in 2020 will be held. As 6 January is a public holiday in Germany and other member states, the first auction, worth 3.1m EUAs on behalf of the EU, will be held on 7 January."
-            }
-        }, 
-        "route":"/route", 
-        "id": "123" 
-    },
-    "pn_debug": true  
+    "route": "/route",
+    "id": "123"
+  }
 }
-
-
